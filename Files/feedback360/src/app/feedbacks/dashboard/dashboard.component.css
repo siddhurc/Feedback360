@@ -1,0 +1,112 @@
+.heading{
+    
+  font-family: 'Barriecito', cursive;
+  color:white;
+  background-color: rgb(65, 60, 60);
+  top:10px;
+  height:55px;
+  font-size: 200px;
+  text-align: center;
+  right: 100px;
+
+}
+.text{
+  margin-left: 200px;
+  font-size: 40px;
+}
+#logo {
+    position:absolute;
+    left: 10px;
+    top: 50px;
+  }
+.text-block{
+  position: absolute;
+  text-align: center;
+  top: 150px;
+  right: 120px;
+
+  color: white;
+  padding-left: 70px;
+  padding-right: 70px;
+  width: 25%;
+  height: 50;
+  
+}
+
+
+  
+  .sidenav {
+    height: 370%;
+    width: 249px;
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    left: 0;
+    background-color:rgb(100, 95, 95);
+    overflow-x: hidden;
+    padding-top: 20px;
+    text-align: center;
+    
+  }
+  .sidetext{
+    margin-top: 250px;
+
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    text-align: left;
+  }
+  
+  .sidenav a:hover {
+    color: black;
+  }
+  
+ 
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  
+/*.btn{
+  color: black;
+  font-size: 20px;
+  text-align: left;
+}
+.list{
+  width:100%;
+  background-color: gray;
+}
+.one{
+  width:100%;
+  background-color: gray;
+}
+.two{
+  width:100%;
+  background-color: gray;
+}
+.three{
+  width:100%;
+  background-color: gray;
+}*/
+
+
+/* #mat-spinner {
+  stroke: #3fb53f;
+  } */
+
+.loading-spinner ::ng-deep .mat-progress-spinner circle, .mat-spinner circle{
+  stroke: #000000;
+}
+
+.loading-spinner{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+}

@@ -1,0 +1,71 @@
+<div class="reqfb jumbotron">
+    <h1 class="display-5">REQUEST FEEDBACK</h1>
+    <p class="lead">Enter the names of the person's whom you want to get the feedback from and also the name of the person for whom you want the feedback.</p>
+
+    <mat-card>
+        <form (submit)="onFeedbackRequest(myForm);" #myForm="ngForm">
+            <mat-form-field class="example-full-width">
+              <div>
+                  <input type="text" placeholder="Feedback Of :" aria-label="Number" matInput [formControl]="feedbackOf" [matAutocomplete]="auto">
+
+                  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                      {{option}}
+                    </mat-option>
+                  </mat-autocomplete>
+              
+            </div>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width example-chip-list">
+                <mat-chip-list #chipList>
+                    <mat-chip *ngFor="let people of peoples" [selectable]="selectable"
+                             [removable]="removable" (removed)="remove(people)">
+                      {{people.name}}
+                      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                    </mat-chip>
+                    <input placeholder="Enter the names you want to get the feedback from: "
+                           [matChipInputFor]="chipList"
+                           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                           [matChipInputAddOnBlur]="addOnBlur"
+                           (matChipInputTokenEnd)="add($event)"
+                           [formControl]="myControl"
+                           matInput  [matAutocomplete]="auto"
+                           required>
+    
+                          
+                          
+                  </mat-chip-list>
+                  <mat-autocomplete #auto="matAutocomplete">
+                      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                        {{option}}
+                      </mat-option>
+                    </mat-autocomplete>
+            </mat-form-field>
+            <br>
+
+
+
+
+
+<!-- Field to get the person name you want to get the feedback of. -->
+           
+
+
+
+            <button type="submit" mat-raised-button color="accent">Save feedback Request</button>
+      
+          </form>
+          <!-- <button (click)="clickSendMail()">click on button to send mail!!!</button> -->
+      </mat-card>
+
+      
+      
+ 
+</div>
+
+<div class="loading-spinner">
+    <mat-spinner *ngIf="showLoading"></mat-spinner>
+ </div>
+
+<app-dashboard></app-dashboard>

@@ -1,0 +1,56 @@
+<div class="reqfb jumbotron">
+                <h3 class="display-10">RECEIVED FEEDBACK</h3>
+                <p ></p>
+                <div class="font-label">
+                <p>Select the person you want the feedback of from the "feedback of" menu.</p>
+                <p>Feedback Of is mandatory, Feedback from is optional.</p>
+                </div>
+        
+                <!-- <h6>Pending Feedbacks :: {{pendingFeedbackCount}}</h6> -->
+
+        <mat-card>
+                <form (submit)="searchFeedbacks()">
+                        <h5>Search Feedbacks:</h5>
+                        <mat-form-field>
+                                <input type="text" placeholder="Feedback Of :" aria-label="Number" matInput [formControl]="feedbackOf" [matAutocomplete]="auto">
+
+                                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                        <mat-option *ngFor="let names of feedbackOfNames" [value]="names">
+                                            {{names}}
+                                        </mat-option>
+                                </mat-autocomplete>
+                        </mat-form-field>
+                       
+                        <mat-form-field>
+                                        <input type="text" placeholder="Feedback from :" aria-label="Number" matInput [formControl]="feedbackFrom" [matAutocomplete]="auto1">
+        
+                                        <mat-autocomplete autoActiveFirstOption #auto1="matAutocomplete">
+                                                <mat-option *ngFor="let names of feedbackFromNames" [value]="names">
+                                                    {{names}}
+                                                </mat-option>
+                                        </mat-autocomplete>
+                                </mat-form-field>
+                                <button type="submit" mat-raised-button color="accent">Search</button>
+
+                </form>
+        </mat-card>
+        
+
+
+        <mat-accordion multi="true" *ngIf="feedbacks.length > 0">
+                <mat-expansion-panel class="my-2" *ngFor="let fb of feedbacks">
+                <mat-expansion-panel-header>
+                <p>FEEDBACK OF: {{fb.feedbackOf}}  &nbsp;&nbsp;&nbsp;&nbsp;    FROM: {{fb.feedbackFrom}}</p>
+                </mat-expansion-panel-header>
+               
+                <h4>Question 1:</h4><p class="display-5">{{fb.question1}}</p>
+                <h4>Question 2:</h4><p>{{fb.question2}}</p>
+                <h4>Question 3:</h4><p>{{fb.question3}}</p>
+               
+                </mat-expansion-panel>
+            </mat-accordion>
+        <p class="mat-body-1" *ngIf="feedbacks.length <= 0 ">No feedbacks to show..!!!</p>
+        
+</div>
+
+<app-dashboard></app-dashboard>

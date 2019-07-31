@@ -1,0 +1,21 @@
+mat-form-field,
+textarea{
+    width: 100%;
+}
+.reqfb{
+    position: absolute;
+    width:75%;
+    margin-left: 17.5%;
+    margin-top:68px;
+}
+
+.loading-spinner ::ng-deep .mat-progress-spinner circle, .mat-spinner circle{
+    stroke: #000000;
+  }
+
+  .loading-spinner{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+  }

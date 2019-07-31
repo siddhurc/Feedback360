@@ -1,0 +1,17 @@
+:host {
+    display: block;
+        
+}
+
+.reqfb{
+    position: absolute;
+    width:75%;
+    margin-left: 17.5%;
+    margin-top:68px;
+}
+
+::ng-deep .feedback-select{
+    width:2000px;
+    background-color: #bcaec7;
+    font-size: 10px;  
+}

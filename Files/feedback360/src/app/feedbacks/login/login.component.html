@@ -1,0 +1,23 @@
+<style>
+   
+</style>
+<div class="background">
+  <img src="/assets/images/1.jpg "width= 100% height= 730/>
+</div>
+<div class="loginbox">
+  <form (submit)="onLogin()" #loginForm="ngForm">
+    <h2>360 LOGIN</h2>
+    <p class="headings"><b>Username</b></p>
+    <input type="text" placeholder="Enter username" matInput [formControl]="userId"/>
+    <p class="headings"><b>Password</b></p>
+    <input type="password" placeholder="Enter password" matInput [formControl]='password'/>
+    <!-- <input type="submit" routerLink="/dashboard" value="Login" /> -->
+    <input type="submit">
+    <b><a routerLink="/forgotpassword" class="forgot-link">Forgot Password?</a></b>
+    
+   </form>
+</div>
+<div class="userimage">
+      <img src="/assets/images/new.jpg " width="75" height="75" style=" border-radius:50%" />
+</div>
+

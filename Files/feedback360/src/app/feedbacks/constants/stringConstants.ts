@@ -1,0 +1,11 @@
+export const cookieLoginIdConst = "feedbackLoginId"; //from dashboard component
+export const cookieLoginNameConst = "feedbackLoginName"; // from dashboard component 
+export const savedSnackbarConst = "Your responses have been saved!!" // from feedback create component
+export const dismissMessageConst = "Dismiss" // from feedback create component
+export const reqSentConst = "Your request has been sent!!"; // from feedback new component
+export const loginMsgConst = "You have logged in successfully!!"; // from login component
+export const incorrectMsgConst = "Incorrect password"; // from login component
+export const userNotExistMsg = "The User does not exist!!"; // from login component
+export const emailSentMsgConst = "Email has been sent!!"; // from forgot password component
+export const passwordUpdateMsgConst = "Password Updated!"; // from forgot password component
+export const passwordNotMatchMsgConst = "Your passwords does not match!!"; // from forgot password component

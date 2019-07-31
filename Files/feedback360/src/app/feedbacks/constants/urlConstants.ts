@@ -1,0 +1,11 @@
+const port = 'http://localhost:3000';
+export const loginURL =port+"/api/login";
+export const getUserDetails = port+"/getUserDetails";// From dashboard component
+export const getFeedbackForList = port+"/api/getFeedbackForList"; // From feedback Create component
+export const searchFeedbacks = port+"/api/searchFeedbacks";// From feedback list component
+export const feedbackNew = port+"/api/feedbacknew"; // From feedback new component
+export const sendmail = port+"/api/sendmail"; // From feedback new component
+export const  getNamesForSuggestions = port+"/api/getNamesForSuggestions";// From feedback new component
+export const feedbacks = port+"/api/feedbacks"; // From feedback services
+export const forgotpassword = port+"/api/forgotpassword";// From forgot password component
+export const codeValidation = port+"/api/codeValidation"; // From forgot password component

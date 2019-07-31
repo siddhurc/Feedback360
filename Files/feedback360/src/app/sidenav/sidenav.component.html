@@ -1,0 +1,38 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <mat-toolbar></mat-toolbar>
+    <div id="logo" >
+      <img src="../assets/images/xyz.jpg" style="border-radius: 50%" width=50% height=50% >
+    </div>
+        <div class="text-block">
+          <h4>{{userName}}</h4>
+          <p> {{userDesignation}}</p>
+        </div>
+    <mat-nav-list class = "sidetext">
+      <a mat-list-item  routerLink = "/requestfeedback"><img src="../assets/images/reqfb.jpg" style="border-radius: 30%" width = 20 height = 20>  Request Feedback</a>
+      <a mat-list-item  routerLink = "/givefeedback"><img src="../assets/images/reqfb.jpg" style="border-radius: 30%" width = 20 height = 20>  Give Feedback</a>
+      <a mat-list-item routerLink="/receivedfeedback"><img src="../assets/images/rcvfb.jpg" style="border-radius:20%" width=20 height=20>  Received Feedback </a>
+      <a mat-list-item href="#signout"><img src="../assets/images/snot.jpg" style="border-radius: 20%" width=20 height=20>  Sign_Out </a>
+    </mat-nav-list>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="toolbar">
+      <div class ="ryth">
+        <img src = "/assets/images/rythmos.png" width=40% height=40%>
+      </div>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span><link href="https://fonts.googleapis.com/css?family=Barriecito&display=swap" rel="stylesheet"><h1  class = "heading">FEEDBACK 360</h1></span>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
