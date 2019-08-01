@@ -3,13 +3,16 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
+      <div class ="ryth">
+          <img src = "/assets/images/rythmos.png" width=60% height=60%>
+        </div>
     <mat-toolbar></mat-toolbar>
     <div id="logo" >
       <img src="../assets/images/xyz.jpg" style="border-radius: 50%" width=50% height=50% >
     </div>
         <div class="text-block">
           <h4>{{userName}}</h4>
-          <p> {{userDesignation}}</p>
+          <p class = "designation"> {{userDesignation}}</p>
         </div>
     <mat-nav-list class = "sidetext">
       <a mat-list-item  routerLink = "/requestfeedback"><img src="../assets/images/reqfb.jpg" style="border-radius: 30%" width = 20 height = 20>  Request Feedback</a>
@@ -21,9 +24,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar class="toolbar">
-      <div class ="ryth">
-        <img src = "/assets/images/rythmos.png" width=40% height=40%>
-      </div>
+      
       <button
         type="button"
         aria-label="Toggle sidenav"

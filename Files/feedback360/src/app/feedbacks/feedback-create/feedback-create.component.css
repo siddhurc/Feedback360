@@ -2,11 +2,17 @@ mat-form-field,
 textarea{
     width: 100%;
 }
+
+:host {
+  display: block;
+  
+}
+
 .reqfb{
     position: absolute;
     width:75%;
     margin-left: 17.5%;
-    margin-top:68px;
+    margin-top:78px;
 }
 
 .loading-spinner ::ng-deep .mat-progress-spinner circle, .mat-spinner circle{

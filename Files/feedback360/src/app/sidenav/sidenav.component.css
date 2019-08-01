@@ -3,7 +3,6 @@
 }
 
 .sidenav {
-  
   width: 250px;
   background-color:	#B2B9C0;
 }
@@ -20,10 +19,15 @@
   top: 0;
   z-index: 1;
 }
+
 .heading{
+  position: absolute;
+  top : 10px;
+  left: 450px;
   font-family: 'Barriecito', cursive;
   font-size: 40px;
   text-align: center;
+
 }
 
 .sidetext{
@@ -36,27 +40,25 @@
 }
 
 .sidenav a {
- 
   font-size: 20px;
   color: black;
-  
   
 }
 .toolbar{
   background-color: amber;
 }
-.ryth{
-  position: absolute;
-  top: 3px;
-  left: 900px;  
 
+.ryth{
+ position: absolute;
+  top: 10px;
+  left: 55px;
 }
 
 .text-block{
   position: absolute;
-  text-align: center;
-  top: 170px;
-  right: 100px;
+  
+  top: 200px;
+  right: 130px;
 
   color: black;
   padding-left: 70px;
@@ -64,4 +66,8 @@
   width: 25%;
   height: 50;
   
+}
+.designation{
+  position: absolute;
+  right: -35px;
 }
