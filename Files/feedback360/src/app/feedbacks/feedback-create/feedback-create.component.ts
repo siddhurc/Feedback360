@@ -1,13 +1,12 @@
 import {Component} from '@angular/core';
 import {NgForm, FormControl} from '@angular/forms';
-
 import { FeedbacksService} from '../feedbacks.service';
-
 import { MatSnackBar } from '@angular/material';
 import { CookieService } from 'ngx-cookie-service';
 import {HttpClient} from '@angular/common/http';
 import {getFeedbackForList} from '../constants/urlConstants';
 import { savedSnackbarConst, cookieLoginNameConst, dismissMessageConst } from '../constants/stringConstants';
+import { Router } from '@angular/router';
 
 @Component({
     selector:'app-feedback-create',
@@ -28,10 +27,7 @@ export class FeedbackCreateComponent {
     selectedOption: string = "0";
     showLoading=true;
 
-
-   
-
-constructor(public feedbacksservice:FeedbacksService,private http:HttpClient,private notificationSnackBar: MatSnackBar,private cookieService:CookieService){}
+constructor(private router: Router,public feedbacksservice:FeedbacksService,private http:HttpClient,private notificationSnackBar: MatSnackBar,private cookieService:CookieService){}
 
     ngOnInit() {
         this.showLoading=true;
@@ -49,21 +45,17 @@ constructor(public feedbacksservice:FeedbacksService,private http:HttpClient,pri
         this.feedbacksservice.addFeedbacks(this.selectedOption,"",this.myControl.value,this.cookieService.get(cookieLoginNameConst),form.value.question1,form.value.question2,form.value.question3);
         this.showLoading=false;
         this.loadSnackBar(savedSnackbarConst);
-
+        location.reload(); /// to reload the page
     }
 
 
 getFeedbackForList() // Getting Name suggestions from the database
 {
-
     this.http.post<{name:string}>(getFeedbackForList,{feedbackFrom:this.cookieService.get(cookieLoginNameConst)}).subscribe(responseData=>{
     //console.log(responseData[0].feedbackFrom);
     console.log(responseData);
     this.list=Object.assign([], responseData);
-    this.showLoading=false;
-    
-
-    
+    this.showLoading=false; 
   });
 }
 
@@ -72,9 +64,5 @@ loadSnackBar(message:string)
     this.notificationSnackBar.open(message,dismissMessageConst,{
       duration: 6000,
     });
-
   }
-
-
-    
 }

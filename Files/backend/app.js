@@ -119,7 +119,6 @@ app.post("/api/sendmail",(req,res,next)=>{
             {
 //                sendMail(result[0].employee_Mail_Id,recipient.name);
                 sendMail(result[0].employee_Mail_Id,result[0].employee_Name);
-
             }
         });  
     }
